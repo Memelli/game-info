@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { RiComputerFill, RiPlaystationFill, RiXboxFill, RiAppleFill, RiMacbookFill, RiAndroidFill } from 'react-icons/ri'
 import { FaLinux } from 'react-icons/fa'
 import { SiNintendo } from 'react-icons/si'
