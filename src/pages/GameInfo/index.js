@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactLoading from 'react-loading'
 import { AiFillStar } from 'react-icons/ai'
+import { RiComputerFill, RiPlaystationFill, RiXboxFill, RiAppleFill, RiMacbookFill, RiAndroidFill } from 'react-icons/ri'
+import { FaLinux } from 'react-icons/fa'
+import { SiNintendo } from 'react-icons/si'
 import moment from 'moment'
 
 const Game = () => {
@@ -70,7 +73,6 @@ const Game = () => {
                                     </div>
                                 </div>
                                 <div className="w-full px-10 my-2 mx-10 flex items-center justify-center">
-
                                     <div>
                                         {game.metacritic < 40 ? <span className="rounded p-3 bg-red-500 text-white">{game.metacritic}</span> :
                                             game.metacritic < 60 ? <span className="rounded p-3 bg-yellow-400 text-white">{game.metacritic}</span> :
@@ -79,6 +81,24 @@ const Game = () => {
                                         }
                                     </div>
                                     <div className="ml-5"><span className="rounded p-1 flex flex-row items-center justify-center text-white bg-blue-500">{game.rating} {'  '} <AiFillStar className="text-yellow-500 text-2xl" /></span></div>
+                                </div>
+                                <div className="mt-2 flex flex-col">
+                                        <span>Platforms available:</span>
+                                    <div className="flex items-center justify-center flex-row">{game.parent_platforms.map((plat) => {
+                                        return (
+                                            <span className="text-black mr-1 text-3xl">{
+                                                plat.platform.name.toLowerCase() === 'pc' ? <RiComputerFill /> :
+                                                    plat.platform.name.toLowerCase() === 'playstation' ? <RiPlaystationFill /> :
+                                                        plat.platform.name.toLowerCase() === 'xbox' ? <RiXboxFill /> :
+                                                            plat.platform.name.toLowerCase() === 'ios' ? <RiAppleFill /> :
+                                                                plat.platform.name.toLowerCase() === 'apple macintosh' ? <RiMacbookFill /> :
+                                                                    plat.platform.name.toLowerCase() === 'android' ? <RiAndroidFill /> :
+                                                                        plat.platform.name.toLowerCase() === 'linux' ? <FaLinux className="text-current" /> :
+                                                                            plat.platform.name.toLowerCase() === 'nintendo' ? <SiNintendo /> : plat.platform.name
+                                            }</span>
+
+                                        )
+                                    })}</div>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +119,7 @@ const Game = () => {
                                 <span className="font-thin text-3xl">Trailer</span>
                                 <div className="mt-3">
                                     {video.length > 0 ? video.slice(0, 1).map(url => {
-                                        console.log(url); return (
+                                       return (
                                             <video className="rounded" controls>
                                                 <source src={url.data.max} type="video/mp4" />
                                             </video>

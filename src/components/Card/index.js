@@ -3,7 +3,7 @@ import { RiComputerFill, RiPlaystationFill, RiXboxFill, RiAppleFill, RiMacbookFi
 import { FaLinux } from 'react-icons/fa'
 import { SiNintendo } from 'react-icons/si'
 
-const Card = ({ color, title, platform, rating, image, slug, type }) => {
+const Card = ({ color, title, platform, rating, image, type }) => {
 
     return (
         <>
@@ -14,34 +14,29 @@ const Card = ({ color, title, platform, rating, image, slug, type }) => {
                 <div className="flex justify-between items-center">
 
                     <span className="font-light text-gray-200">{type}</span>
-                    <a className='font-bold text-gray-100 rounded px-2 py-1 bg-blue-500 hover:bg-blue-900'
-                        href="/">
+                    <span className='font-bold text-gray-100 rounded px-2 py-1 bg-blue-500 hover:bg-blue-900'>
                         {rating}/5
-                    </a>
+                    </span>
                 </div>
                 <div className="mt-2 w-full">
-                    <a className="text-2xl text-gray-200 font-bold hover:text-gray-400" href="/">
-
+                    <span className="text-2xl text-gray-200 font-bold hover:text-gray-400" href="/">
                         {title}
-                    </a>
+                    </span>
                     <div className="mt-2 flex flex-row wrap w-full items-center text-gray-400">
                         {platform.map(plat => (
-                            <span className="text-white mr-1 text-xl">{
-                                plat.platform.name.toLowerCase() === 'pc' ? <RiComputerFill /> :
-                                    plat.platform.name.toLowerCase() === 'playstation' ? <RiPlaystationFill /> :
-                                        plat.platform.name.toLowerCase() === 'xbox' ? <RiXboxFill /> :
-                                            plat.platform.name.toLowerCase() === 'ios' ? <RiAppleFill /> :
-                                                plat.platform.name.toLowerCase() === 'apple macintosh' ? <RiMacbookFill /> :
-                                                    plat.platform.name.toLowerCase() === 'android' ? <RiAndroidFill /> :
-                                                        plat.platform.name.toLowerCase() === 'linux' ? <FaLinux className="text-current" /> :
-                                                            plat.platform.name.toLowerCase() === 'nintendo' ? <SiNintendo /> : plat.platform.name
+                            <span key={plat.platform.id} className="text-white mr-1 text-xl">{
+                                plat.platform.name.toLowerCase() === 'pc' ? <RiComputerFill key={plat.platform.id} /> :
+                                    plat.platform.name.toLowerCase() === 'playstation' ? <RiPlaystationFill key={plat.platform.id} /> :
+                                        plat.platform.name.toLowerCase() === 'xbox' ? <RiXboxFill key={plat.platform.id} /> :
+                                            plat.platform.name.toLowerCase() === 'ios' ? <RiAppleFill key={plat.platform.id} /> :
+                                                plat.platform.name.toLowerCase() === 'apple macintosh' ? <RiMacbookFill key={plat.platform.id} /> :
+                                                    plat.platform.name.toLowerCase() === 'android' ? <RiAndroidFill key={plat.platform.id} /> :
+                                                        plat.platform.name.toLowerCase() === 'linux' ? <FaLinux className="text-current" key={plat.platform.id} /> :
+                                                            plat.platform.name.toLowerCase() === 'nintendo' ? <SiNintendo key={plat.platform.id} /> : plat.platform.name
                             }</span>
                         ))}
                     </div>
                 </div>
-                {/* <div className="flex justify-between items-center mt-4">
-                        <a className="text-blue-600 hover:underline" href={`/${slug}`}>Ver mais</a>
-                    </div> */}
             </div>
         </>
     )

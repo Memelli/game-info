@@ -2,8 +2,8 @@ import './App.css';
 import Navbar from './components/Navbar'
 import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home';
-import Sobre from './pages/About'
 import GameInfo from './pages/GameInfo'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,10 +11,9 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" component={Home} exact></Route>
-        <Route path="/sobre" component={Sobre} exact></Route>
         <Route path="/game/:id" component={GameInfo} exact></Route>
       </Switch>
-      
+      <Footer />
     </>
   );
 }
