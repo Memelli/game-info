@@ -25,7 +25,7 @@ const Home = () => {
 
     return (
         <div className="h-full w-full flex flex-col justify-center wrap items-center">
-            <div className="px-2 h-auto flex w-full justify-center flex-col lg:flex-row xl:flex-row flex-wrap items-center shadow-md">
+            <div className="px-2 h-auto flex w-full justify-center flex-col lg:flex-row xl:flex-row flex-wrap items-center">
                 {loading ? <div className="h-screen w-full flex flex-row justify-center wrap items-center">
                     <ReactLoading type={'spin'} color={'black'} height={'100px'} width={'100px'} />
                 </div> :

@@ -7,7 +7,7 @@ const Card = ({ color, title, platform, rating, image, type }) => {
 
     return (
         <>
-            <div style={{ backgroundColor: `#${color}` }} className="px-10 my-10 lg:mx-2 xl:mx-2 mx-auto py-6 rounded shadow-md hover:shadow-xl w-full lg:w-96 xl:w-96 ">
+            <div className="px-10 my-5 lg:mx-2 xl:mx-2 mx-auto py-6 hover:shadow-xl w-full lg:w-96 xl:w-96 ">
                 <div className="mb-5">
                     <img className="lg:h-40 h-70 w-full" alt="a" src={`${image}`} />
                 </div>
@@ -19,7 +19,7 @@ const Card = ({ color, title, platform, rating, image, type }) => {
                     </span>
                 </div>
                 <div className="mt-2 w-full">
-                    <span className="text-2xl text-gray-200 font-bold hover:text-gray-400" href="/">
+                    <span className="text-2xl text-gray-500 font-bold hover:text-gray-600" href="/">
                         {title}
                     </span>
                     <div className="mt-2 flex flex-row wrap w-full items-center text-gray-400">
