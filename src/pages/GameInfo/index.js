@@ -55,7 +55,7 @@ const Game = () => {
     return (
         <>
             {loading ? <div className="w-full h-screen flex justify-center items-center"><ReactLoading type={'spin'} color={'black'} height={'100px'} width={'100px'} /></div> :
-                <div className="h-full w-full flex flex-row justify-center bg-white wrap">
+                <div className="h-full px-10 w-full flex flex-row justify-center bg-white wrap">
                     <div className="rounded mt-3 text-black h-full flex w-full flex-col lg:flex-row xl:flex-row flex-wrap items-center">
 
                         {/* info */}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-between items-center h-16 bg-gray-900 text-white relative shadow-md" role="navigation">
+        <nav className="flex justify-between lg:px-10 items-center h-16 bg-gray-900 text-white relative shadow-md" role="navigation">
             <Link to='/' className="flex drop-shadow-lg drop-shadow-xl pl-8 text-3xl font-serif">
                 GameInfo
             </Link>
