@@ -48,9 +48,9 @@ const Home = () => {
             </div>
             <div className="m-4 flex justify-evenly w-full">
                 {games.previous ?
-                    <button className="p-2 border-1 rounded bg-gray-300" onClick={() => { setPage(games.previous) }}>Página Anterior</button> : null}
+                    <button className="p-2 border-1 rounded bg-gray-300" onClick={() => { setPage(games.previous); setLoading(true); window.scrollTo(0, 0) }}>Previous Page</button> : null}
                 {games.next ?
-                    <button className="p-2 border-1 rounded bg-gray-300" onClick={() => { setPage(games.next) }}>Próxima página</button> : null}
+                    <button className="p-2 border-1 rounded bg-gray-300" onClick={() => { setPage(games.next); setLoading(true); window.scrollTo(0, 0) }}>Next Page</button> : null}
             </div>
         </div>
     )
